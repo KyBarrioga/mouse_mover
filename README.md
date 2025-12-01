@@ -29,9 +29,11 @@ Install PyAutoGUI using:
 ```bash
 pip install pyautogui
 ```
---- 
+
+---
 
 ## ▶️ Run the script
 
 ```python
 python mouse_mover.py
+```
