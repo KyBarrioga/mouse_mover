@@ -37,7 +37,7 @@ try:
         print(f"Current pos after click: ({cur_x}, {cur_y})")
 
         # wait before next move
-        time.sleep(5)
+        time.sleep(6)
 
 except KeyboardInterrupt:
     print('\nScript stopped by user (KeyboardInterrupt).')
