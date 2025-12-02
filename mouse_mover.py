@@ -2,9 +2,11 @@ import pyautogui
 import time
 import random
 import sys
+from pynput.keyboard import Controller, Key
 
 pyautogui.FAILSAFE = True   # keep this on for safety (move to top-left to abort)
 pyautogui.PAUSE = 0.1       # small automatic pause after actions
+keyboard = Controller()
 
 print('Mouse mover script started. Press Ctrl+C to stop or move mouse to top-left corner.')
 print('Running diagnostics so you can see move+click attempts.')
@@ -36,8 +38,29 @@ try:
         cur_x, cur_y = pyautogui.position()
         print(f"Current pos after click: ({cur_x}, {cur_y})")
 
+        # Simulate keyboard activity (Alt+Tab, Ctrl+Tab, Scroll)
+        prob = random.random()
+        print(f"Keyboard action probability: {prob:.4f}")
+        if prob < 0.25:
+            with keyboard.pressed(Key.alt):
+                keyboard.press(Key.tab)
+                time.sleep(0.1)
+                keyboard.release(Key.tab)
+                print("alt tab.")
+        elif prob < 0.50:
+            with keyboard.pressed(Key.ctrl):
+                keyboard.press(Key.tab)
+                time.sleep(0.1)
+                keyboard.release(Key.tab)
+                print("ctrl tab.")
+        elif prob < 1.0:
+            direction = random.choice([1, -1])
+            scroll_amount = random.randint(1, 3)
+            pyautogui.scroll(direction * scroll_amount)
+            print("scroll.")
+
         # wait before next move
-        time.sleep(6)
+        time.sleep(5)
 
 except KeyboardInterrupt:
     print('\nScript stopped by user (KeyboardInterrupt).')

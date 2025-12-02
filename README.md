@@ -23,11 +23,18 @@ This script includes diagnostics so you can see the exact movements and click at
 
 - Python **3.x**
 - `pyautogui` library
+- `pynput` library
+
+Install PyAutoGUI and Pynput using:
+
+```bash
+pip install pyautogui
+```
 
 Install PyAutoGUI using:
 
 ```bash
-pip install pyautogui
+pip install pynput
 ```
 
 ---
