@@ -3,7 +3,7 @@
 # Python Mouse & Keyboard Activity
 
 A simple Python script that keeps your system active by randomly moving the mouse and perform keyboard actions.
-This script includes diagnostics so you can see the exact movements and click attempts in real-time.
+This script includes diagnostics so you can see the exact movements and click attempts and keyboard activities.
 
 > ⚠️ **Failsafe enabled:** Move your mouse to the **top-left corner** or press **Ctrl + C** in the terminal to immediately stop the script.
 
